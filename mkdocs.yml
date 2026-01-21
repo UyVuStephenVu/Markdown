@@ -1,0 +1,24 @@
+site_name: REPORT
+site_url: https://placeholder.com
+theme: 
+  name: material
+  font:
+    text: Merriweather Sans
+    code: Roboto Mono
+  palette:
+    # Dark Mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+      primary: red
+      accent: cyan
+
+    # Light Mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+      primary: blue
+      accent: deep orange
+  
