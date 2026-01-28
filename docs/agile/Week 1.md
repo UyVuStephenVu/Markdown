@@ -4,7 +4,7 @@ Topics:
     * Introduction to Agile Principles
     * Lean Canvas
 
-## Introduction to Agile Principles 
+## I. Introduction to Agile Principles 
 >"The Agile methodology is an approach that divides work into phases, emphasizing continuous delivery and improvement.  
 >Agile benefits teams by enabling adaptive planning, rapid execution, and ongoing evaluation, leading to more responsive and successful outcomes."  
 ><p style="text-align: right;">-Atlassian. _What is Agile?_</p>
@@ -47,7 +47,7 @@ note*: agile != fast
 Agile principle: #FailFast  
     Action > long discussion test-driven development continuous integration
 
-## Lean canvas
+## II. Lean canvas
 
 A Lean Canvas is a one-page business plan template for startups, focusing on quickly mapping and testing key assumptions about a business idea, prioritizing problems, solutions, customers, and risks over lengthy traditional plans.
 

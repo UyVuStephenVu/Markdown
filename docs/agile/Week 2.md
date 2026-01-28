@@ -8,7 +8,7 @@ Topics:
     * Sprint Planning and Estimation Techniques
 
 
-## Scrum, Scrum roles
+## I. Scrum, Scrum roles
 
 >Scrum is an Agile framework that structures work into time-boxed sprints, with defined roles, artifacts, and ceremonies for iterative delivery.
 ><p style="text-align: right;">-Atlassian. _What is Scrum? Breaking down the Agile framework_</p>
@@ -21,7 +21,7 @@ Do Right Things
 Things Right
 * Scrum Master (Enabling) - Do Things Better
 
-## User persona  
+## II. User persona  
 
 User story
 
