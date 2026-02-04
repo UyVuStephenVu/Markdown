@@ -21,8 +21,7 @@ _Parcel_ is a web bundler that takes your TypeScript (and other files), turns th
 
 * Polymorphism means “many forms.”
 
->In object-oriented programming, polymorphism is the provision of one interface to entities of different data types.
-><p style="text-align: right;">-Wikipedia. _Polymorphism (computer science)_</p>
+>In object-oriented programming, polymorphism is the provision of one interface to entities of different data types.[^1]
 
 ### Steps to polymorphism
 
@@ -132,3 +131,6 @@ const ll = new LinkedList();
 ```
 
 ## IV. Homework: Polymorphism Assignment.
+
+[^1]: Wikipedia. _Polymorphism (computer science)_.    
+https://en.wikipedia.org/wiki/Polymorphism_(computer_science)

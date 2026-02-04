@@ -8,12 +8,11 @@ Topics:
 
 ## I. Introduction
 
->TypeScript is a very useful and powerful tool we can use to optimize our code by checking for syntax errors before runtime, giving tips on how to fix bugs before they happen and more, all by adding in types to our regular JavaScript code! 
+>"TypeScript is a very useful and powerful tool we can use to optimize our code by checking for syntax errors before runtime, giving tips on how to fix bugs before they happen and more, all by adding in types to our regular JavaScript code! 
 
 >Though we can start using TypeScript right out of the box, it does recognize that every application and developer is different, and gives us some room for flexibility. 
 
->We get access to this flexibility/customization through the ts.config file that we will keep in the root of our application, where we can change default rules, and add some rules of our own!
-><p style="text-align: right;">-Armaan on notion</p>
+>We get access to this flexibility/customization through the ts.config file that we will keep in the root of our application, where we can change default rules, and add some rules of our own!"[^1]
 
 ### Typescript property
 * TypeScript is a **static type checker** (TypeScript checks your code before you run it)
@@ -59,5 +58,8 @@ Javascript has something called implicit coercion where js sees different types 
 
 Implicit often does more harm than good. To avoid said problem, typescript requires you to state the data type clearly. Typescript acts as a body guard for your code. If the incoming types don't match, they cannot enter the function.
 
-Specificly, 
+Specifically, 
 Typescript a
+
+[^1]: Armaan Dhanji. Typescript Notes.    
+https://bcitcomputing.notion.site/Typescript-Notes-4a0b4c3d87ae4ebdb9e91de401660a0e#439a6c844f14468389b61f0a08d74841

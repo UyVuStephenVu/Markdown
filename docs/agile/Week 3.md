@@ -1,234 +1,219 @@
-# Week 3 - Starting sprint
+# Week 3 - Github, Jira
 
-## I. Using git as a team
+## I. Using git as a team (Review)
 
-### 1. Setting Up the Repository (One-Time)
-**Create the repository**
+### 1. Repository Setup and Team Access
 
-One team member (usually the lead) should:
+A team workflow starts with a shared repository. One team member creates the repository and configures the basics such as a README.md, .gitignore, and optional license. Team members are then added as collaborators with appropriate permissions.
 
-1. Create a new repository on GitHub
-2. Choose Public or Private
-3. Add:
-
-    * README.md
-    * .gitignore (for your language)
-    * License (optional)
-
-**Add team members**
-
-1. Go to Settings → Collaborators
-2. Invite teammates by GitHub username or email
-3. Assign appropriate permissions:
-
-    * Write – most developers
-    * Admin – team lead
-
-### 2. Cloning the Project Locally
-
-Each team member clones the repo once:
+Once invited, each developer clones the repository locally:
 
 ``` bash
 git clone https://github.com/org-or-user/project-name.git
-cd project-name
 ```
 
-This creates a local copy linked to the shared repository.
+This creates a local copy that stays connected to the team’s shared codebase.
 
-3. Branching: How Teams Avoid Chaos
+### 2. Branching Strategy and Local Development
 
-Rule of thumb:
-👉 Never work directly on main.
+To avoid conflicts and broken code, teams do not work directly on the main branch. Instead, each task or feature is developed in its own branch.
 
-Common branch strategy
+**A common approach:**
 
-main – stable, production-ready code
+* main – stable, production-ready code (Never work directly on main)
+* dev – integration branch (optional)
+* feature/* – individual features or fixes
 
-dev – integration branch (optional)
+Creating and switching to a new branch:
 
-feature/* – individual work
-
-Example:
-
+``` bash
 git checkout -b feature/login-form
+```
 
+Each branch represents one focused change, making collaboration safer and more organized.
 
-Each feature, bug fix, or experiment gets its own branch.
+### 3. Making Changes, Committing, and Pushing
 
-4. Making Changes and Committing Properly
-Make small, focused commits
+As developers work, they regularly save progress using commits. Good commits are small, focused, and clearly described.
 
-Bad:
+Typical workflow:
 
-"fixed stuff"
-
-
-Good:
-
-"Add validation to login form"
-
-
-Command flow:
-
+``` bash
 git status
 git add .
-git commit -m "Describe what you changed"
+git commit -m "Add validation to login form"
+```
 
+💡 Tip: If a commit message needs “and”, it’s probably **doing too much**.
 
-💡 Tip: If a commit message needs “and”, it’s probably doing too much.
+Once a feature is ready or needs review, the branch is pushed to GitHub:
 
-5. Pushing Work to GitHub
-
-Push your branch (not main):
-
+``` bash
 git push origin feature/login-form
+```
+
+At this point, the work is visible to the rest of the team.
+
+### 4. Pull Requests and Code Reviews
+
+Pull Requests (PRs) are the core of team collaboration on GitHub. A PR proposes merging a feature branch into main.
+
+When creating a PR, developers explain:
+
+* What was changed
+* Why the change was made
+* Any related issues
+
+Team members review the code, leave comments, and suggest improvements. This process helps catch bugs early, maintain code quality, and share knowledge across the team.
+
+Once approved, the PR is merged using the team’s preferred merge method (often squash and merge for a clean history).
+
+### 5. Keeping Everyone in Sync and Handling Conflicts
+
+Before starting work, developers pull the latest changes to avoid conflicts:
+
+``` bash
+git checkout main
+git pull origin main
+```
+
+They then merge main into their feature branch:
+
+``` bash
+git checkout feature/login-form
+git merge main
+```
+
+Merge conflicts can occur when multiple people edit the same code. These are resolved manually by choosing the correct changes, then committing the fix. Conflicts are a normal part of teamwork, not a mistake.
+
+### 6. Using Issues for Task Tracking and Communication
+
+GitHub Issues help teams manage work without relying on scattered messages. Issues are used to track bugs, features, and tasks, and can be assigned to specific team members.
+
+Issues can also be linked directly to pull requests, creating a clear record of what problem each change addresses.
+
+### 7. Documentation and Team Conventions
+
+A well-maintained README.md acts as the team’s instruction manual. It typically includes:
+
+* Project overview
+* Setup and run instructions
+* Branching rules
+* Contribution guidelines
+
+Clear documentation reduces onboarding time and prevents confusion as the project grows.
 
 
-The branch now exists on GitHub for the team to see.
+## II. **Github Commonly used commands**
 
-6. Pull Requests (The Core of Teamwork)
+1. Daily Workflow
 
-A Pull Request (PR) is how code gets reviewed and merged.
+``` bash
+// Check repo status:
+git status
 
-Creating a PR
+// See commit history:
+git log
+git log --oneline
 
-Go to the repo on GitHub
+// Pull latest changes:
+git pull
 
-Click Compare & pull request
+// Stage changes:
+git add .
+git add file.ts
 
-Fill in:
+// Commit changes:
+git commit -m "Clear, meaningful message"
 
-What you changed
+// Push your branch:
+git push
+```
 
-Why you changed it
+2. **Branching**
 
-Any issues it fixes
+``` bash
+// List branches:
+git branch
 
-Why PRs matter
 
-Catch bugs early
+// Create and switch branch:
+git checkout -b feature/login
 
-Share knowledge
+// Switch branches:
+git checkout main
 
-Keep main stable
+// Delete branch (local):
+git branch -d feature/login
 
-Create a paper trail of decisions
+// Delete branch (remote):
+git push origin --delete feature/login
+```
 
-7. Code Reviews: How Teams Review Code
+3. Syncing With the Team
 
-Teammates should:
-
-Read the code
-
-Leave comments
-
-Ask questions
-
-Suggest improvements
-
-Common review checks:
-
-Does this break anything?
-
-Is the code readable?
-
-Does it follow team conventions?
-
-Are there tests (if applicable)?
-
-Once approved, the PR can be merged.
-
-8. Merging Without Breaking Everything
-
-Preferred merge option:
-
-Squash and merge (clean history)
-
-or Merge commit (keeps full history)
-
-🚫 Avoid force-pushing to shared branches.
-
-9. Staying in Sync With the Team
-
-Before starting work each day:
-
+``` bash
+// Update main:
 git checkout main
 git pull origin main
 
-
-Then update your feature branch:
-
-git checkout feature/login-form
+// Merge main into your branch:
+git checkout feature/login
 git merge main
 
+// Fetch without merging:
+git fetch
+```
 
-This prevents painful merge conflicts later.
+4. Undoing Mistakes (Very Common)
 
-10. Handling Merge Conflicts (It Happens)
+``` bash
+// Undo unstaged changes:
+git checkout -- file.ts
 
-When Git can’t auto-merge:
+// Unstage a file:
+git reset file.ts
 
-Open conflicted files
+// Undo last commit (keep changes):
+git reset --soft HEAD~1
 
-Choose correct code manually
+// Undo last commit (discard changes):
+git reset --hard HEAD~1
+```
 
-Remove conflict markers (<<<<, ====, >>>>)
+5. Handling Merge Conflicts
 
-Commit the fix
+``` bash
+// Check conflicted files:
+git status
 
-Conflicts are normal — not a failure.
+// After fixing conflicts:
+git add .
+git commit
 
-11. Using Issues for Team Communication
+// Abort a merge:
+git merge --abort
+```
 
-GitHub Issues replace messy chat messages.
+6. Working With Remotes (GitHub)
 
-Use issues to:
+``` bash
+// View remotes:
+git remote -v
 
-Track bugs
+// Add a remote:
+git remote add origin https://github.com/user/repo.git
 
-Assign tasks
+// Set upstream branch:
+git push -u origin feature/login
+```
 
-Discuss features
+## III. Using Jira with Github
 
-Example issue:
+### 1. What is Jira?
 
-Title: Login button not responsive
-Assigned to: Alex
-Labels: bug, frontend
+Jira is a project management and issue-tracking tool (Similar to Trello) used to organize and track work in software teams. While GitHub manages code changes and collaboration, Jira manages the work itself: what needs to be done, why it matters, and what stage it is in. Tasks, bugs, and features are created as Jira issues and move through a workflow such as “To Do,” “In Progress,” and “Done.”
 
+Jira integrates with GitHub so development activity is automatically linked to planning. When branches, commits, or pull requests reference a Jira issue, that information appears directly on the issue. This connects high-level planning in Jira with low-level implementation in GitHub, giving teams clear visibility from task definition to completed code.
 
-Issues can be linked to PRs for full traceability.
-
-12. README: Your Team’s Instruction Manual
-
-A good team README includes:
-
-Project description
-
-Setup instructions
-
-How to run the project
-
-Branching rules
-
-Contribution guidelines
-
-This saves hours of onboarding time.
-
-13. Best Practices for Team GitHub Use
-
-✔ Commit often
-✔ Pull before you push
-✔ One feature per branch
-✔ Review code you didn’t write
-✔ Communicate via issues and PRs
-
-❌ Don’t work on main
-❌ Don’t push broken code
-❌ Don’t ignore merge conflicts
-
-Conclusion
-
-Using GitHub as a team is less about commands and more about discipline and communication. Branches protect the codebase, pull requests protect quality, and issues protect clarity. When everyone follows the same workflow, GitHub becomes a powerful collaboration tool instead of a source of stress.
-
-## II. Using Jira with Github
+Jira also helps automate processes like cloning a repository or moving a task from doing to done.

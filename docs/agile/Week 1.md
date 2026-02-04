@@ -1,4 +1,4 @@
-# Week 1 - Agile Software Development (Pt. 1)
+# Week 1 - Agile Software Development
 Topics:
 
     * Introduction to Agile Principles
@@ -6,8 +6,7 @@ Topics:
 
 ## I. Introduction to Agile Principles 
 >"The Agile methodology is an approach that divides work into phases, emphasizing continuous delivery and improvement.  
->Agile benefits teams by enabling adaptive planning, rapid execution, and ongoing evaluation, leading to more responsive and successful outcomes."  
-><p style="text-align: right;">-Atlassian. _What is Agile?_</p>
+>Agile benefits teams by enabling adaptive planning, rapid execution, and ongoing evaluation, leading to more responsive and successful outcomes."[^1]
 
 Two ways to solve a problem:
 
@@ -81,3 +80,5 @@ A Lean Canvas is a one-page business plan template for startups, focusing on qui
 9. **Unfair Advantage** (What cannot be easily copied by competitors.)
     * Example: Exclusive partnerships with university student groups.
 
+[^1]: Atlassian. _What is Agile?_    
+https://www.atlassian.com/agile
