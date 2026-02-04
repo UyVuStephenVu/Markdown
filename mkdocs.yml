@@ -1,6 +1,10 @@
 site_name: REPORT
 site_url: https://placeholder.com
+markdown_extensions:
+  - footnotes
 theme: 
+  features:
+    - content.footnote.tooltips
   name: material
   font:
     text: Merriweather Sans
@@ -21,4 +25,5 @@ theme:
         name: Light mode
       primary: blue
       accent: deep orange
-  
+
+

@@ -1,3 +1,7 @@
 ##Week 1 Report: Starter Class
 
-do heuristic
+I am unsure?
+
+<!-- reminder:
+
+do heuristic -->
