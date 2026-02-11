@@ -5,3 +5,10 @@ I am unsure?
 <!-- reminder:
 
 do heuristic -->
+
+
+situation
+task
+action
+result
+learning/take away
